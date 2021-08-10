@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "inter";
+    src: url('../fonts/Inter-VariableFont_slnt_wght.ttf');
+}
+@font-face {
+    font-family: 'Rubick';
+    src: url(../fonts/Rubik-VariableFont_wght.ttf);
+}
+.auth-form {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 130px 250px;
+    
+}
+.form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 200;
+}
+.title{
+    font-family: "inter";
+    font-weight: bold;
+    color: #99EFD0;
+    font-size: 44px;
+}
+.form__wrapper{
+    display: flex;
+    flex-direction: column;
+}
+#input{
+    font-family: 'Rubick';
+    margin-top: 15px;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 2px rgb(4, 13, 62) solid;
+    padding: 10px 5px;
+    color: orange;
+    font-size: 17px;
+    font-weight: 400;
+    &::placeholder{
+        font-family: "Rubick";
+        color: #99EFD0;
+        font-size: 17px;
+    }
+    &:focus{
+        border-color: orange; 
+    }
+}
