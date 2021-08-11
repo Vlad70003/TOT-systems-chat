@@ -1,5 +1,4 @@
 import React, { Dispatch } from "react";
-import '../style/authSection.scss';
 import { Header } from "./blocks/Header";
 import { ConnectAuthForm } from './blocks/AuthForm';
 import { connect } from 'react-redux';
