@@ -61,7 +61,7 @@ export function AuthForm (props: typeProps) {
                     <div className="form__wrapper">
                         <input type="text" name="lastName" id="input" placeholder="Введите фамилию" />
                     </div>
-                    <input type="submit" value="Войти" className="button" />
+                    <input type="submit" value="Регистрация" className="button" />
                 </form>
             </div>
     )

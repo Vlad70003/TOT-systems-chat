@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Style-Script';
+    src: url(../fonts/StyleScript-Regular.ttf);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    border-bottom: 1px rgb(4, 13, 62) solid;
+}
+.logotype{
+    margin: 0 20px;
+}
+.header__wrapper{
+    display: flex;
+    align-items: center;
+}
+.desc{
+    color: white;
+    font-size: 30px;
+    font-family: 'Style-Script';
+}

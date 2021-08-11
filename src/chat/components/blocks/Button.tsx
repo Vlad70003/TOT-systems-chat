@@ -1,10 +1,12 @@
 import React from "react";
-import { isPropertySignature } from "typescript";
 import '../../style/button.scss';
+import { connect } from 'react-redux';
+import { logOut } from '../../../actions';
 
 type typeText = {
     text: string,
     setAuthFunc: any,
+    logOut: any,
 }
 
 
@@ -15,6 +17,8 @@ export function Button (props: typeText){
             props.setAuthFunc('reg')
         } else if ( val === "Вход"){
             props.setAuthFunc('auth')
+        } else if (val === "Выйти") {
+            props.logOut();
         }
         
     }
@@ -23,3 +27,8 @@ export function Button (props: typeText){
         <button className="button" onClick={setForm(props.text)} >{props.text}</button>
     )
 }
+
+export const ConnectButton = connect(
+    (state: {isLoggedIn: any}) => ({isLoggedIn: state.isLoggedIn}),
+    { logOut }
+  )(Button);

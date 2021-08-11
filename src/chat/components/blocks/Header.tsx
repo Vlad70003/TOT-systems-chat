@@ -1,17 +1,21 @@
 import React from "react";
 import logo from '../../img/logo.svg';
-import { Button } from './Button';
+import { ConnectButton } from './Button';
+import '../../style/header.scss';
 
 type typeProps = {
     text: string,
-    setAuthFunc: any,
+    setAuthFunc?: any,
 }
 
 export function Header(props: typeProps){
     return(
         <header className="header">
-            <img src={logo} alt="Logotype" />
-            < Button text={props.text} setAuthFunc={props.setAuthFunc}/>
+            <div className="header__wrapper">
+                <img src={logo} className="logotype" alt="Logotype" />
+                <div className="desc">Chat</div>
+            </div>
+            < ConnectButton text={props.text} setAuthFunc={props.setAuthFunc}/>
         </header>
     )
 }
