@@ -34,8 +34,8 @@ export function ChatSection(){
             setMessage('');
             storage['workChat'] = JSON.stringify(workChat);
         }
-        
     }
+
 
 
     return(
@@ -45,8 +45,8 @@ export function ChatSection(){
                 <span className="star"></span>
                 <div className="chat">
                     <div className="chat__tab">
-                        <div className="chat__disc button" onClick={(event:any) => { setChatFn(event, 'fl')}} >Флуд</div>
-                        <div className="chat__disc button" onClick={(event:any) => { setChatFn(event, 'wr')}} >Рабочий чат</div>
+                        {chat === 'fl' ? <div className="chat__disc button-active" onClick={(event:any) => { setChatFn(event, 'fl')}} >Флуд</div> : <div className="chat__disc button " onClick={(event:any) => { setChatFn(event, 'fl')}} >Флуд</div>}
+                        {chat === 'wr' ? <div className="chat__disc button-active" onClick={(event:any) => { setChatFn(event, 'wr')}} >Рабочий чат</div> : <div className="chat__disc button" onClick={(event:any) => { setChatFn(event, 'wr')}} >Рабочий чат</div>}
                     </div>
                     <div className="chat__wrapper">
                         {chat === 'fl' && < ChatContentFl /> }

@@ -2,7 +2,7 @@ import React from "react";
 import '../../style/chatContent.scss';
 let storage = localStorage; 
 
-export function ChatContentWr() {
+export function ChatContentWr(props: any) {
 
     let addMessage = (val: any, user: any) => {
         
@@ -26,7 +26,7 @@ export function ChatContentWr() {
                 <div className="user">System:</div>
                 <div className="message">Добро пожаловать в рабочий чат!</div>
             </div>
-            {storage.getItem('workChat') !== null && storage.getItem('workChat') !== undefined && addMessage(storage.getItem('floodChat'), storage.getItem('userLogin'))}   
+            {storage.getItem('workChat') !== null && storage.getItem('workChat') !== undefined && addMessage(storage.getItem('workChat'), storage.getItem('userLogin'))}   
         </div>
     )
 }

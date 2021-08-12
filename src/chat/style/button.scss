@@ -18,3 +18,14 @@
         color: white;
     }
 }
+.button-active{
+    font-family: 'Rubick';
+    border: 2px #F2994A solid;
+    border-radius: 5px;
+    outline: none;
+    background: #F2994A;
+    font-size: 20px;
+    color: white;
+    padding: 0 15px;
+    cursor: pointer;
+}
