@@ -4,12 +4,15 @@ export const AUTHENTICATE = 'AUTHENTICATE';
 export const REGISTRATION = "REGISTRATION";
 export const REGISTRATION_SUCCESS = "REGISTRATION_SUCCESS";
 
-export const logIn = () => ({type: LOG_IN});
+export const logIn = (nick) => ({
+    type: LOG_IN,
+    payload: {nick},
+});
 export const logOut = () => ({type: LOG_OUT});
 
-export const authenticate = (email, password) => ({
+export const authenticate = (email, password, nick) => ({
     type: AUTHENTICATE, 
-    payload: {email, password}
+    payload: {email, password, nick}
 });
 
 export const registration = (email, password, name, surname) => ({

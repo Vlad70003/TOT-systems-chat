@@ -12,6 +12,7 @@ export default function auth(state = initialState, action){
     return {
       ...state, 
       isLoggedIn: true,
+      nick: action.payload,
     }
     }
     case LOG_OUT: {

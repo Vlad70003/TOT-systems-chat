@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { ConnectAuthSection } from './chat/components/AuthSection';
-import { ChatSection } from './chat/components/ChatSection';
+import { ConnectChatSection } from './chat/components/ChatSection';
 import { connect } from 'react-redux';
 
 
@@ -9,7 +9,7 @@ function App(props: any) {
   return (
     <div className="App">
       {!props.isLoggedIn && < ConnectAuthSection /> }
-      {props.isLoggedIn && < ChatSection />}
+      {props.isLoggedIn && < ConnectChatSection />}
     </div>
   );
 }

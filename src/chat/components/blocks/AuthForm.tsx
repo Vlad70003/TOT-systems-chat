@@ -14,11 +14,12 @@ export function AuthForm (props: typeProps) {
 
     let [email, setEmail] = useState('');
     let [pass, setPass] = useState('');
+    let [nick, setNick] = useState('');
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if(email !== '' && pass !== ''){
-            props.authenticate( email, pass);
+            props.authenticate( email, pass, nick);
         }
     }
     const changeEmail = ( event: React.ChangeEvent<HTMLInputElement> ) => {
@@ -28,6 +29,10 @@ export function AuthForm (props: typeProps) {
     const changePass = ( event: React.ChangeEvent<HTMLInputElement> ) => {
         let value = event.target.value;
         setPass(pass = value);
+    }
+    const changeNick = ( event: React.ChangeEvent<HTMLInputElement> ) => {
+        let value = event.target.value;
+        setNick(nick = value);
     }
     
 
@@ -41,6 +46,9 @@ export function AuthForm (props: typeProps) {
                     </div>
                     <div className="form__wrapper">
                         <input type="password" name="password" id="input" placeholder="Введите пароль" onChange={changePass} value={pass} />
+                    </div>
+                    <div className="form__wrapper">
+                        <input type="text" name="nickname" id="input" placeholder="Введите ник" onChange={changeNick} value={nick} />
                     </div>
                     <input type="submit" value="Войти" className="button" />
                 </form>

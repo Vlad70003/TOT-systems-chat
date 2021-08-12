@@ -6,6 +6,7 @@
     display: flex;
     padding: 20px 0;
     height: 100%;
+    z-index: 200;
 }
 .chat__wrapper{
     width: 100%;
@@ -32,14 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.chat__content{
-    background:  rgb(59, 29, 96);
-    margin-left: 10px;
-    height: 80%;
-    border-radius: 10px;
-    border: 2px rgb(4, 13, 62) solid;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, .5);
+    
 }
 .form__message{
     display: flex;
@@ -49,7 +43,7 @@
     margin: 20px 0;
 }
 #message{
-    width: 90%;
+    width: 85%;
     min-height: 80px;
     resize: none;
     outline: none;
@@ -59,9 +53,12 @@
     border-radius: 10px;
 }
 .send{
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
-    background: url('../img/send.svg');
+    background: url('../img/send.svg') no-repeat center;
     border: none;
+    border-radius: 50%;
+    border: 4px orange solid;
+    background-size: 60%;
 }
