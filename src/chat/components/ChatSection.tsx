@@ -7,14 +7,17 @@ import { useState } from "react";
 import { connect } from 'react-redux';
 
 let storage = localStorage;
-let floodChat: string[] = [];
-let workChat: string[] = [];
+let floodChat: any[] = [];
+let workChat: any[] = [];
 
 export function ChatSection(){
 
 
     let [chat, setChat] = useState('fl');
     let [message, setMessage] = useState('');
+    let [flID, setflID] = useState(0);
+    let [wrID, setwrID] = useState(0);
+
 
     let setChatFn = (event:any, val:string): any => {
         setChat(val);
@@ -26,16 +29,17 @@ export function ChatSection(){
     let submitMessageFn = (event: React.FormEvent <HTMLFormElement>) => {
         event.preventDefault();
         if(chat === 'fl' && message.length > 0){
-            floodChat.push(message);
+            floodChat.push({message, flID});
+            setflID(flID = flID + 1);
             setMessage('');
             storage['floodChat'] = JSON.stringify(floodChat);
         } else if(chat === 'wr' && message.length > 0){
-            workChat.push(message);
+            workChat.push({message, wrID});
+            setwrID(wrID = wrID + 1);
             setMessage('');
             storage['workChat'] = JSON.stringify(workChat);
         }
     }
-
 
 
     return(
@@ -49,8 +53,8 @@ export function ChatSection(){
                         {chat === 'wr' ? <div className="chat__disc button-active" onClick={(event:any) => { setChatFn(event, 'wr')}} >Рабочий чат</div> : <div className="chat__disc button" onClick={(event:any) => { setChatFn(event, 'wr')}} >Рабочий чат</div>}
                     </div>
                     <div className="chat__wrapper">
-                        {chat === 'fl' && < ChatContentFl /> }
-                        {chat === 'wr' && < ChatContentWr /> }
+                        {chat === 'fl' && < ChatContentFl floodChat={floodChat}/> }
+                        {chat === 'wr' && < ChatContentWr workChat={workChat}/> }
                         <form action="" className="form__message" onSubmit={submitMessageFn}>
                             <textarea name="message" id="message" value={message} onChange={setMessageFn}/>
                             <input type="submit" value="" className="send" />
