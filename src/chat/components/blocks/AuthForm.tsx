@@ -23,7 +23,7 @@ export function AuthForm (props: typeProps) {
     const handleSubmitAuth = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if(email !== '' && pass !== ''&&  nick !== ''){
-            props.authenticate( email, pass);
+            props.authenticate( email, pass, nick);
         } else{
             setError(error = true);
         }

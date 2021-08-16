@@ -31,5 +31,5 @@ section {
   height: 800px;
   background: url('./chat/img/star.svg') no-repeat center;
   background-size: 100%;
-  z-index: 100;
+  z-index: 50;
 }

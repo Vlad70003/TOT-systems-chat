@@ -45,7 +45,6 @@ export function ChatSection(){
         <section className="chat-section forWrapper">
             <div className="wrapper">
                 < Header text="Выйти" />
-                <span className="star"></span>
                 <div className="chat">
                     <div className="chat__tab">
                         {chat === 'fl' ? <div className="chat__disc button-active" onClick={(event:any) => { setChatFn(event, 'fl')}} >Флуд</div> : <div className="chat__disc button " onClick={(event:any) => { setChatFn(event, 'fl')}} >Флуд</div>}

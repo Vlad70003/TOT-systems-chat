@@ -13,7 +13,9 @@ export function* authenticateSaga(action) {
     let storage = localStorage;
     storage['userLogin'] = JSON.stringify([email, password, nick]);
     yield put(logIn(nick));
-  } 
+  } else if (success.success){
+    alert('Пользователя с такими данными не существует, зарегистрируйтесь')
+  }
 }
 
 export function* authSaga() {

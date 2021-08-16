@@ -1,7 +1,7 @@
 import { LOG_IN, LOG_OUT, REGISTRATION_SUCCESS } from '../actions.js';
 
 const initialState = {
-    isLoggedIn: true,
+    isLoggedIn: false,
     registration: false,
 }
 
