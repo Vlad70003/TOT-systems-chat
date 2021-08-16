@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+import { useStore } from "react-redux";
 import '../../style/chatContent.scss';
 let storage = localStorage;
 
@@ -16,12 +18,13 @@ export function ChatContentFl(props: any) {
                         <div className="user">{userArr !== null && userArr !== undefined && userArr[2]}</div>
                         <div className="corr-message">
                             <div className="eddit" ></div>
-                            <div className="del"></div>
+                            <div className="del" ></div>
                         </div>
                     </div>
                     <div className="message">{valArr[i]['message']}</div>
                 </div>
             )
+           
         }
         return returnElement;
     }

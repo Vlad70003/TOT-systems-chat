@@ -3,16 +3,15 @@ import { Header } from "./blocks/Header";
 import { ChatContentFl } from './blocks/ChatContentFl';
 import { ChatContentWr } from './blocks/ChatContentWr';
 import '../style/chatSection.scss';
+import { floodChat } from '../data/data';
+import { workChat } from '../data/data';
 import { useState } from "react";
 import { connect } from 'react-redux';
 
 let storage = localStorage;
-let floodChat: any[] = [];
-let workChat: any[] = [];
+
 
 export function ChatSection(){
-
-
     let [chat, setChat] = useState('fl');
     let [message, setMessage] = useState('');
     let [flID, setflID] = useState(0);
